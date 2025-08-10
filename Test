@@ -1,0 +1,38 @@
+# ~/.config/picom.conf
+
+backend = "glx";
+glx-no-stencil = true;
+glx-copy-from-front = false;
+glx-no-rebind-pixmap = true;
+
+# Transparenz für normale Fenster (90% Deckkraft)
+opacity-rule = [
+  "90:class_g = 'XTerm'",
+  "90:class_g = 'URxvt'",
+  "90:class_g = 'Alacritty'",
+  "90:class_g = 'Termite'",
+  "90:class_g = 'Kitty'"
+];
+
+# Schatten aktivieren
+shadow = true;
+shadow-radius = 7;
+shadow-offset-x = -7;
+shadow-offset-y = -7;
+shadow-opacity = 0.3;
+
+# Fading-Effekte
+fading = true;
+fade-delta = 4;
+fade-in-step = 0.03;
+fade-out-step = 0.03;
+
+# Blur (falls dein Grafiktreiber es unterstützt)
+blur-method = "kernel";
+blur-strength = 7;
+
+# Vermeide Transparenz bei Vollbild
+wintypes:
+{
+  tooltip = { fade = true; shadow = false; opacity = 0.9; };
+};
